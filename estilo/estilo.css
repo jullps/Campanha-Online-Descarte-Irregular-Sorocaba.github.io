@@ -1,0 +1,389 @@
+/* ! CONFIGURAÇÕES GERAIS ------------------------------------------------------------------------- */
+
+* { /* * Aplica para todos os componentes disponíveis */
+    margin: 0; /* Espaço externo zerado */
+    padding: 0; /* Espaço interno zerado */
+    box-sizing: border-box; /* Largura e altura dos componentes incluam o espaço interno e a borda */
+}
+
+:root { /* * Definição de variáveis */
+    --cor_1: #fffdf6; /* Variável 1 é uma cor clara */
+    --cor_2: #37818a; /* Variável 2 é um tom de azul esverdeado */
+    --cor_3: #ffcc31; /* Variável 3 é um amarelo vibrante */
+    --cor_4: #a1d2ce; /* Variável 4 é um azul esverdeado claro */
+    --cor_5: rgba(67, 173, 124, 0.6); /* Variável 5 é um verde com transparência */
+    --cor_6: #b6efd4; /* Variável 6 é um verde água claro */
+}
+
+@font-face { /* * Definição da fonte 'Shrikhand' */
+    font-family: 'Shrikhand'; /* Nome da fonte */
+    src: url('../fontes/Shrikhand/Shrikhand-Regular.ttf'); /* Caminho do arquivo da fonte */
+}
+
+@font-face { /* * Definição da fonte 'Merriweather' */
+    font-family: 'Merriweather'; /* Nome da fonte */
+    src: url('../fontes/Merriweather/Merriweather-Regular.ttf'); /* Caminho do arquivo da fonte */
+}
+
+body { /* * Estiliza o corpo do documento */
+    background-color: var(--cor_1); /* Define cor de fundo */
+    font-family: 'Merriweather'; /* Define a fonte para Merriweather (textos em gerais)*/
+    font-size: 14px; /* Tamanho da fonte */
+    text-align: justify; /* Justifica o texto */
+}
+
+h2, h3, h4 { /* * Estiliza os cabeçalhos h2, h3 e h4 */
+    font-family: "Shrikhand"; /* Define a fonte para 'Shrikhand' (títulos) */
+    font-weight: lighter; /* Define o peso da fonte para mais leve */
+}
+
+h2 { /* * Estiliza especificamente o cabeçalho h2 */
+    font-size: 2em; /* Define o tamanho da fonte para 2 vezes o tamanho do texto normal */
+}
+
+p { /* * Estiliza os parágrafos */
+    padding-top: 5px; /* Adiciona um espeçamento interno no topo dos parágrafos */
+}
+
+.container { /* * Estiliza elementos com a classe .container */
+    margin: 5px 8px; /* Adiciona um espeçamento externo ao redor do container (5px vertical, 8px horizontal)*/
+    padding: 10px; /* Adiciona um espeçamento interno do container */
+}
+
+.sub_container { /* * Estiliza elementos com a classe .sub_container. */
+    margin: 5px; /* Adiciona um espaçamento externo ao redor do subcontainer. */
+    padding: 10px 15px; /* Adiciona um espaçamento interno do subcontainer (10px vertical, 15px horizontal) */
+}
+
+/* ! MOBILE VERSION ------------------------------------------------------------------------------- */
+
+/* ? HEADER MOBILE -------------------------------------------------- */
+
+header { /* * Estiliza a tag <header> */
+    background-color: var(--cor_1); /* Define cor de fundo */
+    padding: 10px 2vw; /* Adiciona um espaçamento interno do cabeçalho (10px vertical, 2% da largura do viewport horizontal) */
+    position: sticky; /* Fixa o cabeçalho na parte superior da página ao rolar */
+    top: 0; /* Posiciona o cabeçalho no topo da página */
+}
+
+a { /* * Estiliza todas as tags <a> (links) */
+    color: var(--cor_2); /* Define a cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 0 1vw; /* Adiciona um espaçamento interno dos links (0 vertical, 1% da largura do viewport horizontal) */
+}
+
+header > a { /* * Estiliza especificamente a tag <a> que é filha direta do <header> (<a>Home</a>) */
+    font-size: 15px; /* Define o tamanho da fonte */
+    font-weight: 600; /* Define o peso da fonte (semi-negrito) */
+}
+
+header input { /* *Estiliza a tag <input> dentro do <header> */
+    display: none; /* Oculta o input */
+}
+
+ul { /* * Estiliza as tags <ul> (listas não ordenadas) */
+    list-style: none; /* Remove os marcadores da lista */
+    text-align: center; /* Centraliza o texto dentro da lista */
+}
+
+li { /* * Estiliza as tags <li> (itens de lista) */
+    padding: 5px 20px; /* Adiciona um espaçamento interno dos itens da lista (5px vertical, 20px horizontal) */
+}
+
+label img { /* * Estiliza a imagem do menu */
+    position: absolute; /* Posiciona a imagem de forma absoluta*/
+    top: 10px; /* Posiciona a imagem 10px abaixo do topo */
+    right: 20px; /* Posiciona a imagem 20px à direita do lado direito */
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+    width: 20px; /* Define a largura (80% do seu container pai) */
+}
+
+nav { /* * Estiliza a tag <nav> */
+    display: none; /* Oculta a tag <nav> */
+}
+
+nav a { /* * Estiliza as tags <a> dentro da <nav> */
+    display: block; /* Se transforme em bloco, ocupando toda a largura disponível */
+    padding: 10px 15px; /* Adiciona um espaçamento interno (10px vertical, 15px horizontal) */
+}
+
+a:hover, label img:hover { /* * Estiliza as tags <a> e a imagem menu quando o mouse está sobre eles */
+    opacity: 0.7; /* Reduz a opacidade dos links e da imagem */
+}
+
+nav a:hover { /* * Estiliza as tags <a> dentro da <nav> quando o mouse está sobre eles */
+    text-decoration: underline; /* Adiciona um sublinhado aos links */
+}
+
+header #hamb-menu:checked ~ nav { /* * Estiliza a tag <nav> quando o checkbox com id 'hamb-menu' dentro do <header> está marcado 'verdadeiro'*/
+    display: block; /* Mostra a <nav> quando o menu hambúrguer está 'verdadeiro' */
+}
+
+header:has(#hamb-menu:checked) { /* * Estiliza a tag <header> se conter um checkbox com id 'hamb-menu' que está marcado 'verdadeiro' */
+    background-color: var(--cor_6); /* Muda a cor de fundo do cabeçalho*/
+}
+
+/* ? RODAPÉ MOBILE -------------------------------------------------- */
+
+footer { /* * Estiliza a tag <footer> (rodapé) */
+    background-color: var(--cor_4); /* Define a cor de fundo do rodapé */
+    padding: 20px 15px 10px 15px; /* Define o espaçamento interno (20px superior, 10px inferior, 15px horizontal) */
+}
+
+#index ~ footer .container { /* * Estiliza as tags com a classe .container que estão dentro do <footer> que é irmão direto da tag com id 'index' */
+    text-decoration: underline; /* Adiciona um sublinhado */
+    text-align: center;  /* Alinha o texto ao centro */
+    color: var(--cor_2); /* Define a cor do texto dentro do rodapé da página index*/
+}
+
+footer h4 { /* * Estiliza as tags <h4> que estão dentro do <footer> */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* ? PAGINA INDEX PRINCIPAL MOBILE----------------------------------- */
+
+#frases-principal { /* * Estiliza a tag com id 'frases-principal' */
+    text-align: left; /* Alinha o texto à esquerda */
+    width: 80%; /* Define a largura (80% do seu container pai) */
+    margin: 2vh auto; /* Adiciona um espaço externo do bloco (2% da altura da viewport vertical, centraliza horizontalmente) */
+    padding: 35px 20px; /* Define o espaçamento interno (35px vertical, 20px horizontal) */
+    color: var(--cor_2); /* Define a cor do texto */
+}
+
+#frases-principal h2 { /* * Estiliza as tags <h2> dentro da tag com id'#frases-principal' */
+    font-size: 30px; /* Define o tamanho da fonte */
+}
+
+#frases-principal h3 { /* * Estiliza as tags <h3> dentro da tag com id 'frases-principal' */
+    font-family: 'Merriweather'; /* Define a família da fonte para 'Merriweather' */
+    font-weight: bold; /* Define o peso da fonte (negrito) */
+    text-transform: uppercase; /* Transforma o texto para letras maiúsculas */
+    font-size: 11px; /* Define o tamanho da fonte */
+}
+
+#container_fundo { /* * Estiliza a tag com id 'imgs-principal' */
+    display: flex; /* Aplica o modelo de layout flexível */
+    flex-wrap: wrap; /* Os itens filhos serão quebrados em várias linhas se não couberem em uma única linha*/
+}
+
+.fundo_cor { /* * Estiliza as tags com a classe '.fundo_cor' */
+    width: 50%; /* Define a largura (50% da largura do seu container pai) */
+    height: 15vh; /* Define a altura (15% da altura da viewport) */
+    text-align: center; /* Centraliza o texto dentro da tag (irá centralizar a imagem tbm) */
+}
+
+/* ? PAGINA INDEX TEMA MOBILE --------------------------------------- */
+
+#tema-explicacao { /* * Seleciona a tag com id 'tema-explicacao' */
+    margin: 3vh; /* Adiciona um espaço externo */
+}
+
+#tema-explicacao h2 { /* * Seleciona todos as tags <h2> dentro da tag com id 'tema-explicacao' */
+    color: var(--cor_2); /* Define a cor do texto */
+    text-align: right; /* Alinha o texto à direita */
+    margin-bottom: 10px; /* Adiciona espaço externo inferior de 10px */
+    width: 90%; /* Define a largura (90% da largura do seu conteiner pai) */
+    margin-left: 15%; /* Adiciona espaço externo à esquerda (15% da largura do seu conteiner pai) */
+}
+
+#tema-explicacao p { /* * Seleciona todas as tags <p> dentro da tag com id 'tema-explicacao' */
+    margin: 0 30px; /* Adiciona espaço externo (0 vertical, 30px horizontal)*/
+    padding: 5px; /* Adiciona um espaço interno */
+}
+
+#tema-explicacao figure { /* * Seleciona todas as tags <figure> dentro da tag com id 'tema-explicacao' */
+    display: none; /* Oculta a tag (não será exibida na página quando a tela for menor que 730px) */
+}
+
+/* ? PAGINA SOBRE MOBILE -------------------------------------------- */
+
+#sobre .sub_container { /* * Seleciona todas as tags com a classe 'sub_container' dentro da tag com id 'sobre' */
+    background-color: var(--cor_3); /* Define a cor de fundo */
+}
+
+#sobre .sub_container h3 { /* * Seleciona todas as tags <h3> dentro de elementos com a classe 'sub_container' que estão dentro da tag com id 'sobre' */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 5px; /* Adiciona espaço externo inferior */
+    text-decoration: underline; /* Sublinha o texto */
+}
+
+#equipe { /* * Seleciona a tag com o id 'equipe' */
+    background-color: var(--cor_5); /* Define a cor de fundo */
+    margin: 0 25px 20px 25px; /* Adiciona espaço externo (0 topo, 25px horizontal, 20px inferior) */
+    border-radius: 25px; /* Define o raio da borda (arredonda a borda) */
+}
+
+#equipe .sub_container { /* * Seleciona todas as tags com a classe 'sub_container' dentro da tag com id 'equipe' */
+    border-top: solid 1px; /* Define a borda superior como sólida e com 1px de espessura */
+}
+
+/* ? PAGINA IMPACTOS MOBILE ----------------------------------------- */
+
+#impactos h2 { /* * Seleciona todas as tags <h2> dentro da tag com id 'impactos' */
+    text-align: center; /* Alinha o texto ao centro */
+    color: var(--cor_2); /* Define a cor do texto */
+    margin-bottom: 5px; /* Adiciona espaço externo inferior */
+}
+
+#impactos section { /* * Seleciona todas as tags <section> dentro da tag com id 'impactos' */
+    border-radius: 5px 5px 0 0; /* Define o raio da borda (5px topo esquerdo e direito, 0 inferior) */
+    background-color: var(--cor_6); /* Define a cor de fundo */
+    margin-bottom: 15px; /* Adiciona um espaço externo inferior */
+}
+
+/* ? PAGINA MEDIDAS SUSTENTÁVEIS MOBILE ----------------------------------------- */
+
+#medidas_sustentaveis h2, #medidas_sustentaveis h3 { /* * Seleciona todas as tags <h2> e <h3> dentro da tag com id 'medidas_sustentaveis' */
+    color: var(--cor_2); /* Define a cor do texto */
+}
+
+/* ! DESKTOP VERSION ------------------------------------------------------------------------------ */
+
+@media (min-width: 750px) { /* * Media query que aplica os estilos apenas quando a largura da tela é no mínimo 750px */
+
+    .caixa_subcontainer { /* * Seleciona todas as tags com a classe 'caixa_subcontainer' (ativado apenas quando a tela tiver no min 750px) */
+        display: flex; /* Aplica o modelo de layout flexível */
+    }
+
+    /* ? HEADER DESKTOP --------------------------------------------- */
+
+    header { /* * Seleciona a tag <header> */
+        justify-content: space-between; /* Distribui o espaço entre os itens do container (justificados e separados) */
+        align-items: center; /* Alinha os itens do container verticalmente ao centro */
+    }
+
+    header, ul { /* * Seleciona a tag <header> e todas as tags <ul> */
+        display: flex; /* Aplica o modelo de layout flexível */
+        flex-direction: row; /* Define a direção dos itens do container como linha (horizontal) */
+    }
+
+    label img { /* * Seleciona a tag imagem menu dentro da tag <header> */
+        display: none; /* Oculta a imagem menu */
+    }
+
+    nav { /* * Seleciona a tag <nav> */
+        display: block; /* Se transforme em bloco, se tormando visível */
+        padding-top: 0px; /* Reajusta um espaço interno superior para 0 */
+    }
+
+    li { /* * Seleciona todas as tags <li> */
+        padding: 0 5vw; /* Reajusta o espaço interno (0 vertical, 5% da largura da viewport horizontal)  */
+    }
+
+    nav a { /* * Seleciona todas as tags <a> dentro da <nav> */
+        padding: 0; /* Reajusta o espaço interno para 0 */
+    }
+
+    /* ? RODAPÉ DESKTOP --------------------------------------------- */
+
+    #index ~ footer .container { /* * Estiliza as tags com a classe .container que estão dentro do <footer> que é irmão direto da tag com id 'index' */
+        display: block; /* Define o tipo de exibição como bloco (p/ não ficar flex como os outros containers do footer) */
+    }
+
+    footer .container { /* * Estiliza as tags com a classe .container que estão dentro do <footer> */
+        display: flex; /* Aplica o modelo de layout flexível */
+        flex-wrap: wrap; /* Os itens filhos serão quebrados em várias linhas se não couberem em uma única linha*/
+        justify-content: space-between; /* Distribui o espaço entre os itens do container (justificados e separados) */
+    }
+
+    footer p { /* * Estiliza as tags com as tags que estão dentro do <footer> */
+        width: 48%;  /* Define a largura (48% do seu container pai) */
+    }
+
+    /* ? PAGINA INDEX PRINCIPAL DESKTOP ----------------------------- */
+
+
+    #pag-principal { /* * Seleciona a tag com id 'pag-principal' */
+        display: flex; /* Aplica o modelo de layout flexível */
+        flex-direction: row; /* Define a direção dos itens do container como linha (horizontal) */
+        height: 40vh; /* Define a altura (40% da altura da viewport) */
+    }
+
+    #frases-principal { /* * Seleciona a tag com id 'frases-principal' */
+        width: 45vw; /* Define a largura (45% da largura da viewport) */
+        margin: 20px; /* Adiciona um espaço externo */
+        padding: 15px 20px; /* Adiciona um espaço interno (15px vertical, 20px horizontal) */
+        align-self: self-end; /* Alinha o item ao final do container */
+    }
+
+    #container_fundo { /* * Seleciona a tag com id 'imgs-principal' */
+        width: 55vw; /* Define a largura (55% da largura da viewport) */
+    }
+
+    .fundo_cor { /* * Seleciona todas as tags com a classe 'fundo_cor' */
+        height: 50%; /* Define a altura (50% do seu conteiner pai) */
+    }
+
+    /* ? PAGINA INDEX TEMA DESKTOP ------------------- */
+
+    #tema-explicacao { /* * Seleciona a tag com id 'tema-explicacao' */
+        display: flex; /* Aplica o modelo de layout flexível */
+        min-height: 40vh; /* Define a altura mínima (40% da altura da viewport) */
+        margin: 5px; /* Adiciona um espaço externo */
+        padding: 5vh 7vw; /* Adiciona um espaço interno (5% da altura da viewport vertical, 7% da largura da viewport horizontal) */
+        align-items: center; /* Alinha os itens verticalmente ao centro */
+    }
+
+    #index .sub_container { /* * Seleciona todas as tags com a classe 'sub_container' dentro da tag com id 'index' */
+        width: 55vw; /* Define a largura (55% da largura da viewport) */
+        padding: 10px; /* Adiciona um espaço interno */
+    }
+
+    #tema-explicacao h2 { /* * Seleciona todas as tags <h2> dentro da tag com id 'tema-explicacao' */
+        text-align: center; /* Alinha o texto ao centro */
+        margin: 10px auto; /* Adiciona um espaço externo (10px verticalmente, centraliza horizontalmente) */
+        width: 80%; /* Define a largura (80% do seu conteiner pai) */
+    }
+
+    #tema-explicacao p { /* * Seleciona todas as tags <p> dentro da tag com id 'tema-explicacao' */
+        margin: 0 1vw; /* Adiciona um espaço externo (0 vertical, 1% da largura da viewport horizontal) */
+        padding: 5px; /* DAdiciona um espaço interno */
+        margin-left: 0px; /* Reajusta um espaço externo esquerdo */
+    }
+
+    #tema-explicacao figure { /* *Seleciona a tag <figure> dentro da tag com id 'tema-explicacao' */
+        display: block; /* Define o tipo de exibição como bloco */
+        width: 45vw; /* Define a largura (45% da largura da viewport) */
+        text-align: center; /* Alinha o texto (e a img) ao centro */
+    }
+
+    #tema-explicacao figure img { /* * Seleciona a imagens dentro da tag <figure> dentro da tag com id 'tema-explicacao' */
+        width: 95%; /* Define a largura (95% do seu conteiner pai) */
+        max-width: 50vh; /* Define a largura máxima  (50% da altura da viewport) */
+        height: 35vh; /* Define a altura (35% da altura da viewport) */
+    }
+
+    figure figcaption a { /* * Seleciona a tag <a> dentro da tag <figcaption> dentro da tag <figure> */
+        font-size: 8px; /* Define o tamanho da fonte */
+    }
+
+    /* ? PAGINA SOBRE DESKTOP -------------------------------------------- */
+
+    #sobre { /* * Seleciona a tag com id 'sobre' */
+        min-height: 40vh; /* Define a altura mínima (40% da altura da viewport) */
+    }
+
+    #equipe { /* * Seleciona a tag com id 'equipe' */
+        background: var(--cor_5); /* Define a cor de fundo */
+        min-height: 40vh; /* Define a altura mínima (40% da altura da viewport) */
+        flex-wrap: wrap;/* Os itens filhos serão quebrados em várias linhas se não couberem em uma única linha*/
+        justify-content: space-evenly; /* Distribui o espaço entre os itens do container de forma uniforme (igual) */
+    }
+
+    #equipe > div.container,
+    #equipe .sub_container { /* * Seleciona as tags <div> com a classe 'container' que são filhos diretos de '#equipe'
+        * e todos as tags com a classe 'sub_container' dentro de '#equipe' */
+        width: 45%; /* Define a largura (45% do seu conteiner pai) */
+    }
+
+    /* ? PAGINA IMPACTOS DESKTOP ----------------------------------------- */
+
+    #impactos .caixa_subcontainer { /* * Seleciona todas as tags com a classe 'caixa_subcontainer' dentro da tag com id 'impactos' */
+        flex-wrap: wrap; /* Os itens filhos serão quebrados em várias linhas se não couberem em uma única linha*/
+        justify-content: space-evenly; /* Distribui o espaço entre os itens do container de forma uniforme (igual) */
+    }
+
+    #impactos section { /* * Seleciona todos as tags <section> dentro da tag com id 'impactos' */
+        width: 45%; /* Define a largura (45% do seu conteiner pai) */
+    }
+}
