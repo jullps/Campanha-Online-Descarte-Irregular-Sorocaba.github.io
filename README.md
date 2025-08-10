@@ -10,7 +10,6 @@ O objetivo principal deste projeto é informar e sensibilizar a população sobr
 
 - **HTML5**
 - **CSS3**
-- Estrutura de pastas organizada para facilitar a manutenção e expansão do site.
 
 ## Estrutura do Projeto
 
@@ -19,7 +18,3 @@ O objetivo principal deste projeto é informar e sensibilizar a população sobr
 - **estilo/**: Arquivos de estilos CSS.
 - **imagens/**: Imagens utilizadas no site.
 - **fontes/**: Fontes personalizadas utilizadas nos títulos e textos.
-
-## Observações
-
-Este projeto foi desenvolvido exclusivamente para fins acadêmicos, sem fins lucrativos, e tem como foco a educação ambiental e o desenvolvimento de habilidades em HTML
