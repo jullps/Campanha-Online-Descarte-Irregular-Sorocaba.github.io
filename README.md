@@ -18,3 +18,8 @@ O objetivo principal deste projeto é informar e sensibilizar a população sobr
 - **estilo/**: Arquivos de estilos CSS.
 - **imagens/**: Imagens utilizadas no site.
 - **fontes/**: Fontes personalizadas utilizadas nos títulos e textos.
+
+
+## Acesse o site
+
+[🔗 Clique aqui para abrir o site](https://jullps.github.io/Campanha-Online-Descarte-Irregular-Sorocaba.github.io/)
